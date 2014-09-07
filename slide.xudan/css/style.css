@@ -1,0 +1,6 @@
+@charset "utf-8";
+/* CSS Document */
+.slide{position:relative;width:504px;height:92px;overflow:hidden;}
+.slide ol{position:relative;width:20000px;}
+.slide ol li{float:left;width:168px;height:92px;overflow:hidden;} 
+.slide ol li a{padding-right:10px;}

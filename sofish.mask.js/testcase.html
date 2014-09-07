@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>mask.js</title>
+</head>
+<body>
+<pre><mask>Mask.debug()</mask> is on!</pre>
+
+<select name="" id="select">
+  <option value="">hello</option>
+  <option value="">world</option>
+  <option value="">!</option>
+</select>
+
+<embed id="embed" src="http://www.xiami.com/widget/4627_1771010854/singlePlayer.swf" type="application/x-shockwave-flash" width="257" height="33" wmode="transparent"></embed>
+
+<p>
+  <button id="set">set mask</button>
+  <button id="remove">remove mask</button>
+</p>
+<script src="./mask.js"></script>
+<script>
+  var $select = document.getElementById('select')
+    , $embed = document.getElementById('embed')
+    , $set = document.getElementById('set')
+    , $rm = document.getElementById('remove');
+
+  Mask.debug();
+  $set.onclick = function() {
+      Mask.set($select, $embed);
+  };
+  $rm.onclick = function() {
+      Mask.remove($select, $embed); 
+  };
+</script>
+</body>
+</html>
