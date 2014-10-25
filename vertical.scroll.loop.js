@@ -16,10 +16,10 @@
 			snmt = snf.css('margin-top'),
 			snmtv = parseInt(snmt) - 1;
 		if(snmtv % 30 === 0){           // 具体元素的高度为 30，当元素上滚的距离达到一个单位的时候，则将第一个元素移动到最后边，然后增加一个单位高度
-			snmtv += 30;
 			sn.append('<li>' + snf.html() + '</li>');
 			snf.remove();
+		} else {
+			snf.css('margin-top', snmtv + 'px');    // 重新设置元素的 magrin-top	
 		}
-		sn.find('li:first').css('margin-top', snmtv + 'px');    // 重新设置元素的 magrin-top
 	}, 50);
 })($('#scroll-notice'));    // 传入需要滚动的元素
