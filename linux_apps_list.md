@@ -22,10 +22,6 @@
   sudo apt-get install pushbullet-indicator
 ```
 
-- GNOME Icons Pack
-
-  http://itsfoss.com/best-icon-themes-ubuntu-1404
-
 - Brackets in Ubuntu
 
 ```shell
