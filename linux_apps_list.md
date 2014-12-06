@@ -69,6 +69,13 @@
   sudo apt-get install numix-icon-theme numix-icon-theme-circle
 ```
 
+# Site List
+
+  1. http://itsfoss.com/
+  2. http://www.omgubuntu.co.uk/
+  3. http://linuxtoy.org/
+  4. http://linux.cn/
+
 - Other
 
   1. gdebi （deb 包安装器）;
