@@ -40,3 +40,21 @@
   2. synaptic （软管理工具 - 控制面板）;
   3. sougou-pinyin （拼音输入 -Fctix）;
   4. pcmanfm （文件管理器，相较 files 稳定）;
+  5. vagrant （虚拟机管理）;
+  6. bleachbit （缓存、日志文件清）;
+  7. vlc （视频播放）;
+  8. mysql-workbench （MySQL GUI 客户端工具）;
+  9. sublime （纯文本编辑，需要解决中文输入的问题）;
+  10. leafpad （简单文本编辑器，支持 GBK 编码）;
+  11. libreoffice （办公套件）;
+  12. chrome;
+  13. uget （GUI 下载工具）;
+  14. deepin-qq （Deepin 团队的 Wine QQ 解决方案，还比较稳定）;
+  15. git；
+  16. filezilla （FTP）;
+  17. skype;
+  18. Nutstore （坚果云）;
+  19. wireshark;
+  20. intellij idea;
+  21. remarkable （Markdown）;
+  19. 
