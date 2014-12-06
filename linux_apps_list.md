@@ -34,7 +34,7 @@
   sudo apt-get install brackets
 ```
 
-- Glances
+- [Glances](https://github.com/nicolargo/glances/)
 
 ```shell
   #install
