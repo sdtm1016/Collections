@@ -12,3 +12,13 @@
   sudo apt-get remove notepadqq
   sudo add-apt-repository --remove ppa:notepadqq-team/notepadqq
 ```
+
+- Pushbullet Indicator in Ubuntu
+
+```shell
+  #install 
+  sudo add-apt-repository ppa:atareao/atareao
+  sudo apt-get update
+  sudo apt-get install pushbullet-indicator
+
+```
