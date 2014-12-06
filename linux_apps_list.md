@@ -61,6 +61,14 @@
   # 软后使用 synaptic 安装壁纸集、图标集
 ```
 
+# Numix Icons Pack
+
+```shell 
+  sudo add-apt-repository ppa:numix/ppa
+  sudo apt-get update
+  sudo apt-get install numix-icon-theme numix-icon-theme-circle
+```
+
 - Other
 
   1. gdebi （deb 包安装器）;
