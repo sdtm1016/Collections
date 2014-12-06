@@ -34,6 +34,25 @@
   sudo apt-get install brackets
 ```
 
+- Glances
+
+```shell
+  #install
+  sudo apt-add-repository ppa:arnaud-hartmann/glances-stable
+  sudo apt-get update
+  sudo apt-get install glances
+  #run
+  glances
+  # 定时刷
+  glances -t 2
+  # Glances 会用一下几种颜色来代表状态：
+
+  # 绿色：OK（一切正常）
+  # 蓝色：CAREFUL（需要注意）
+  # 紫色：WARNING（警告）
+  # 红色：CRITICAL（严重）
+```
+
 - Other
 
   1. gdebi （deb 包安装器）;
