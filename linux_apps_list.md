@@ -36,6 +36,7 @@
 
 - Other
 
-  1. gdebi;
-  2. synaptic;
-  3. sougou-pinyin
+  1. gdebi （deb 包安装器）;
+  2. synaptic （软管理工具 - 控制面板）;
+  3. sougou-pinyin （拼音输入 -Fctix）;
+  4. pcmanfm （文件管理器，相较 files 稳定）;
