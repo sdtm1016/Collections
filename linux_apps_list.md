@@ -20,5 +20,8 @@
   sudo add-apt-repository ppa:atareao/atareao
   sudo apt-get update
   sudo apt-get install pushbullet-indicator
-
 ```
+
+- GNOME Icons Pack
+
+[图标报合](http://itsfoss.com/best-icon-themes-ubuntu-1404)
