@@ -33,3 +33,9 @@
   sudo apt-get update
   sudo apt-get install brackets
 ```
+
+- Other
+
+  1. gdebi;
+  2. synaptic;
+  3. sougou-pinyin
