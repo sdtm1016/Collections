@@ -75,6 +75,7 @@
   2. http://www.omgubuntu.co.uk/
   3. http://linuxtoy.org/
   4. http://linux.cn/
+  5. http://wiki.linuxdeepin.com/index.php?title=软件应用
 
 - Other
 
