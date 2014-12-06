@@ -24,4 +24,4 @@
 
 - GNOME Icons Pack
 
-[图标报合](http://itsfoss.com/best-icon-themes-ubuntu-1404)
+  http://itsfoss.com/best-icon-themes-ubuntu-1404
