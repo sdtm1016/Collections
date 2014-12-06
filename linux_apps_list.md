@@ -53,6 +53,14 @@
   # 红色：CRITICAL（严重）
 ```
 
+# elementary extras ppa
+
+```
+  #install 
+  sudo add-apt-repository ppa:versable/elementary-update
+  # 软后使用 synaptic 安装壁纸集、图标集
+```
+
 - Other
 
   1. gdebi （deb 包安装器）;
