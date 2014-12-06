@@ -25,3 +25,11 @@
 - GNOME Icons Pack
 
   http://itsfoss.com/best-icon-themes-ubuntu-1404
+
+- Brackets in Ubuntu
+
+```shell
+  sudo add-apt-repository ppa:webupd8team/brackets
+  sudo apt-get update
+  sudo apt-get install brackets
+```
