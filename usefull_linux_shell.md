@@ -16,7 +16,7 @@
 sudo a2enmod rewrite
 ```
 
-2.参照上文的目录配置，做个启动链接（下次启动自动加载）：
+2. 参照上文的目录配置，做个启动链接（下次启动自动加载）：
 
 ```shell
 ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rewrite.load
@@ -24,7 +24,7 @@ ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rewrite
 
 执行后会在mods-available目录下创建一个快捷方式，连接到`mods-enabled`下`rewrite`模块。
 
-3、重启 Apache：
+3. 重启 Apache：
 
 ```shell
 /etc/init.d/apache2 restart
