@@ -2,6 +2,6 @@
 
 ## 配置
 
-### 使用`空格键`代替 `Tab`
+1. 使用`空格键`代替 `Tab`
 
   勾选 Virtual Space 下的 Use soft wraps in editor
