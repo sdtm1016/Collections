@@ -334,3 +334,15 @@
 	<aop:advisor advice-ref="${some_interceptor}" pointcut-ref="${some_pointname}" />
 </aop:config>
 ```
+
+## 5. SomeFtlModel
+
+```java
+public class IsUserLoginFtlModel implements TemplateMethodModelEx {
+    @Override
+    public Object exec(List list) throws TemplateModelException {
+        // logic
+        return null;
+    }
+}
+```
