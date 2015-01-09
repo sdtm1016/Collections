@@ -30,3 +30,30 @@
     <version>${fastjson.version}</version>
 </dependency>
 ```
+
+### Apache Commons
+
+```xml
+<!-- 必须的，其实也挺好用的 -->
+<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-lang3</artifactId>
+    <version>${commons-lang.version}</version>
+</dependency>
+<!-- DB Collection Pool -->
+<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-dbcp2</artifactId>
+    <version>${commons-dbcp.version}</version>
+</dependency>
+```
+
+### JDBC Driver
+
+```xml
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>${mysql-connector-java.version}</version>
+</dependency>
+```
