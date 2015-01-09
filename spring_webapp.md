@@ -153,4 +153,39 @@
     <version>${joda.version}</version>
 </dependency>
 ```
-## /WEB-INF/web.xml
+## 2. WEB-INF/web.xml
+
+```xml
+<listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+</listener>
+<context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>
+        classpath*:spring/context.xml
+        classpath*:spring/security.xml
+    </param-value>
+</context-param>
+<!-- spring securit start -->
+<filter>
+    <filter-name>springSecurityFilterChain</filter-name>
+    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+</filter>
+<filter-mapping>
+    <filter-name>springSecurityFilterChain</filter-name>
+    <url-pattern>/*</url-pattern>
+</filter-mapping>
+<!-- 过滤静态资源 -->
+<servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>/static/*</url-pattern>
+</servlet-mapping>
+<servlet>
+    <servlet-name>wxuc</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>wxuc</servlet-name>
+    <url-pattern>/</url-pattern>
+</servlet-mapping>
+```
