@@ -446,3 +446,113 @@ public class ${some_interceptor} implements MethodInterceptor {
     	return json("status", "error");
     }
 ```
+## 10. RequestUtils
+
+```Java
+public final class RequestUtils {
+
+    private RequestUtils() {
+    }
+
+    private static Authentication getAuthentication(){
+        return SecurityContextHolder.getContext().getAuthentication();
+    }
+
+    public static boolean isAuthenicated() {
+        return null != getAuthentication();
+    }
+
+    /**
+     * 获取用户的个人信息
+     * @return
+     */
+    public static Security getSecurity() {
+        Authentication auth = getAuthentication();
+        return null == auth ? null : (Security) auth.getPrincipal();
+    }
+
+    /**
+     * 获取用户账号具备的权限
+     * @return
+     */
+    public static Collection<? extends GrantedAuthority> getAuthorities(){
+        Authentication auth = getAuthentication();
+        return null == auth ? null : auth.getAuthorities();
+    }
+}
+```
+
+## 11. Creator
+
+```Java
+public final class Creator {
+
+    private Creator() {
+    }
+
+    public static <T> Map<String, T> hashMap() {
+        return new HashMap<String, T>();
+    }
+
+    /**
+     * 创建一个新的 HashMap
+     * @param key
+     * @param val
+     * @param <T>
+     * @return
+     */
+    public static <T> Map<String, T> hashMap(final String key, final T val) {
+        return new HashMap() {{
+            put(key, val);
+        }};
+    }
+
+    /**
+     * 创建一个新的 List
+     * @param <T>
+     * @return
+     */
+    public static <T> List<T> arrayList() {
+        return new ArrayList<T>();
+    }
+
+    /**
+     * 传入单一参数，多个参数或者数组合并为一个新的 List
+     * @param ts
+     * @param <T>
+     * @return
+     */
+    public static <T> List<T> arrayList(final T... ts) {
+        return new ArrayList<T>() {{
+            for (T t : ts) {
+                add(t);
+            }
+        }};
+    }
+
+    /**
+     * 创建一个新的 Set
+     * @param <T>
+     * @return
+     */
+    public static <T> Set<T> hashSet(){
+        return new HashSet<T>();
+    }
+
+    /**
+     * 传入单一参数，多个参数或者数组合并为一个新的 Set
+     * @param ts
+     * @param <T>
+     * @return
+     */
+    public static <T> Set<T> hashSet(final T... ts){
+        return new HashSet<T>(){{
+            for (T t : ts) {
+                add(t);
+            }
+        }};
+    }
+
+}
+
+```
