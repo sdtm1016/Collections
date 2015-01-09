@@ -189,3 +189,63 @@
     <url-pattern>/</url-pattern>
 </servlet-mapping>
 ```
+
+## 3. spring/context.xml
+
+```xml
+<!-- default-autowire="byName" default-lazy-init="false" -->
+<context:component-scan base-package="${base_packge_path}" />
+<!-- option -->
+<bean id="exceptionResolver" class="${globle_exception_handler}"/>
+<!-- DataSource -->
+<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+	<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+	<property name="url" value="${jdbc_connection_uri}" />
+	<property name="username" value="${jdbc_connection_username}" />
+	<property name="password" value="${jdbc_connection_password}"/>
+</bean>
+<!-- SQL Session -->
+<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+	<property name="dataSource" ref="dataSource" />
+ 	<property name="configLocation" value="classpath:mybatis/mybatis-conf.xml" />
+	<property name="mapperLocations" value="classpath*:mybatis/mapper/mapper-*Dao.xml" />
+</bean>
+<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+	<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+	<property name="basePackage" value="${dao_base_package}" />
+</bean>
+```
+
+## 4. security.xml
+
+```xml
+<!-- 静态资源 -->
+<http pattern="/static/**" security="none" />
+<!-- 登陆界面 -->
+<http pattern="/login" security="none" />
+<!-- 其他需要拦截的内容 -->
+<http auto-config="false" access-denied-page="/login" use-expressions="true">
+	<!-- 拦截器,可以设定哪些路径需要哪些权限来访问 -->
+	<intercept-url pattern="/**" access="isAuthenticated()" />
+	<http-basic />
+	<!-- session 管理 -->
+	<session-management invalid-session-url="/login"
+				session-authentication-error-url="/login"
+				session-fixation-protection="migrateSession">
+	</session-management>
+	<!-- 登陆页面 -->
+	<form-login login-page="/login" default-target-url="/dash"
+				authentication-failure-url="/login"
+				always-use-default-target="true" />
+	<!-- 记住我 -->
+	<remember-me key="${key}" />
+	<!-- 注销后跳转到的页面; -->
+	<logout logout-success-url="/login" delete-cookies="JSESSIONID" />
+</http>
+<!-- 用户权限校验服务配置 -->
+<beans:bean id="authoritiesService" class="${authorities_service_refrence_path}" />
+
+<authentication-manager erase-credentials="false">
+	<authentication-provider user-service-ref="authoritiesService" />
+</authentication-manager>
+```
