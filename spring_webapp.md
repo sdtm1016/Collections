@@ -122,3 +122,35 @@
     <version>${spring.security.version}</version>
 </dependency>
 ```
+
+### ORM
+
+```xml
+<dependency>
+    <groupId>org.mybatis</groupId>
+    <artifactId>mybatis</artifactId>
+    <version>${mybatis.version}</version>
+</dependency>
+<!-- Spring support -->
+<dependency>
+    <groupId>org.mybatis</groupId>
+    <artifactId>mybatis-spring</artifactId>
+    <version>${mybatis.spring.version}</version>
+</dependency>
+```
+
+### Other
+
+```xml
+<dependency>
+    <groupId>org.freemarker</groupId>
+    <artifactId>freemarker</artifactId>
+    <version>${freemarker.version}</version>
+</dependency>
+<dependency>
+    <groupId>joda-time</groupId>
+    <artifactId>joda-time</artifactId>
+    <version>${joda.version}</version>
+</dependency>
+```
+## /WEB-INF/web.xml
