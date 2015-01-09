@@ -185,7 +185,7 @@
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 </servlet>
 <servlet-mapping>
-    <servlet-name>wxuc</servlet-name>
+    <servlet-name>${servlet_name}</servlet-name>
     <url-pattern>/</url-pattern>
 </servlet-mapping>
 ```
@@ -253,10 +253,6 @@
 ## 3. mybatis/mybatis-conf.xml
 
 ```xml
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE configuration
-		PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
-		"http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<settings>
 		<setting name="cacheEnabled" value="false" />
@@ -271,4 +267,70 @@
 		<package name="${base_dto_package}" />
 	</typeAliases>
 </configuration>
+```
+
+## 4. WEB-INF/${servlet_name}-servlet.xml
+
+```xml
+<!-- 对象序列化，JSON 解析器 -->
+<mvc:annotation-driven>
+	<mvc:message-converters register-defaults="true" >
+		<bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
+			<property name="supportedMediaTypes" value="application/json;charset=UTF-8" />
+		</bean>
+	</mvc:message-converters>
+</mvc:annotation-driven>
+<context:component-scan base-package="${base_package}" />
+<mvc:interceptors>
+    	<bean class="${some_interceptor}" />
+</mvc:interceptors>
+<bean id="freemarkerConfigurer"
+	  class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+	<property name="templateLoaderPath" value="/WEB-INF/view/" />
+	<property name="defaultEncoding" value="UTF-8" />
+	<property name="freemarkerSettings">
+		<props>
+			<prop key="template_update_delay">10</prop>
+			<prop key="locale">zh_CN</prop>
+			<prop key="datetime_format">yyyy-MM-dd HH:mm:ss</prop>
+			<prop key="date_format">yyyy-MM-dd</prop>
+			<prop key="number_format">#.##</prop>
+		</props>
+	</property>
+	<property name="freemarkerVariables">
+		<props>
+			<prop key="${pk}">${pv}</prop>
+		</props>
+	</property>
+</bean>
+<!-- Freemarker 解析器 -->
+<bean id="viewResolver"
+	  class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+	<property name="viewClass" value="org.springframework.web.servlet.view.freemarker.FreeMarkerView" />
+	<property name="suffix" value=".ftl" />
+	<property name="contentType" value="text/html;charset=utf-8" />
+	<property name="exposeRequestAttributes" value="true" />
+	<property name="exposeSessionAttributes" value="true" />
+	<property name="exposeSpringMacroHelpers" value="true" />
+	<property name="attributesMap">
+		<map>
+			<entry key="${ftl_model_name}">
+				<bean class="${ftl_model_reference}" />
+			</entry>
+		</map>
+	</property>
+</bean>
+<bean id="jspViewResolver"
+	  class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<property name="viewClass">
+		<value>org.springframework.web.servlet.view.InternalResourceView</value>
+	</property>
+	<property name="prefix" value="/WEB-INF/jsp/" />
+	<property name="suffix" value=".jsp" />
+</bean>
+<bean id="${some_interceptor}" class="${some_interceptor_path}"></bean>
+<aop:config>
+	<aop:pointcut id="${some_pointname}" expression="${some_spel_expression}" />
+	<aop:advisor advice-ref="${some_interceptor}" pointcut-ref="${some_pointname}" />
+</aop:config>
 ```
