@@ -346,3 +346,103 @@ public class IsUserLoginFtlModel implements TemplateMethodModelEx {
     }
 }
 ```
+
+## 6. AuthoritiesService
+
+```java
+public class AuthoritiesService implements UserDetailsService {
+    @Autowired
+    // sth
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        // logic
+        return null;
+    }
+}
+```
+
+## 7. ExceptionHandler
+
+```Java
+public class ExceptionHandler implements HandlerExceptionResolver {
+    @Override
+    public ModelAndView resolveException(HttpServletRequest req, HttpServletResponse res, Object o, Exception e) {
+        // do log
+        httpServletResponse.setStatus(500);
+        return new ModelAndView("${view_name}");
+    }
+}
+```
+
+## 8. ${some_interceptor}
+
+```Java
+public class ${some_interceptor} implements MethodInterceptor {
+    @Override
+    public Object invoke(MethodInvocation methodInvocation) throws Throwable {
+	// logic
+        return methodInvocation.proceed();
+    }
+}
+```
+
+## 9. BaseController
+
+```Java
+    public final <T> String view(Map<String, T> data, Model model){
+        if(null != model && null != data){
+            model.addAllAttributes(data);
+        }
+        return ftl();
+    }
+
+    public final String view(){
+        return ftl();
+    }
+
+    public final String view(String key, Object val, Model model){
+        if(null != model && null != val && StringUtils.isNoneBlank(key)) {
+            model.addAttribute(key, val);
+        }
+        return ftl();
+    }
+
+    /**
+     * 避免因为重载导致 StackTrace 不统一
+     * @return
+     */
+    private final String ftl(){
+        StackTraceElement ste = Thread.currentThread().getStackTrace()[3];
+        String dirName = StringUtils.removeEnd(ste.getFileName(), "Controller.java");
+        String ftlName = StringUtils.uncapitalize(ste.getMethodName());
+        return StringUtils.uncapitalize(dirName) + "/" + StringUtils.capitalize(ftlName);
+    }
+
+    /**
+     * 重定向
+     * @param mapping
+     * @return
+     */
+    protected String redirct(String mapping) {
+        return "redirect:" + mapping;
+    }
+
+    protected <T> Map<String, T> json(String key, T val) {
+        return Creator.hashMap(key, val);
+    }
+
+    public <T> Map<String, T> json(final String key, final T val, final Map<String, T> map) {
+        return new HashMap<String, T>() {{
+            put(key, val);
+            putAll(map);
+        }};
+    }
+    
+    protected Object success() {
+    	return json("status", "success");
+    }
+    
+    protected Object failure() {
+    	return json("status", "error");
+    }
+```
