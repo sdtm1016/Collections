@@ -1,35 +1,5 @@
 # Linux 软件列
 
-- Notepadqq: Notepad++ Clone For Linux
-
-```shell
-  # install
-  sudo add-apt-repository ppa:notepadqq-team/notepadqq
-  sudo apt-get update
-  sudo apt-get install notepadqq
-  
-  #remove
-  sudo apt-get remove notepadqq
-  sudo add-apt-repository --remove ppa:notepadqq-team/notepadqq
-```
-
-- Pushbullet Indicator in Ubuntu
-
-```shell
-  #install 
-  sudo add-apt-repository ppa:atareao/atareao
-  sudo apt-get update
-  sudo apt-get install pushbullet-indicator
-```
-
-- Brackets in Ubuntu
-
-```shell
-  sudo add-apt-repository ppa:webupd8team/brackets
-  sudo apt-get update
-  sudo apt-get install brackets
-```
-
 - Pinta for Linux
 
 ```shell
@@ -93,7 +63,7 @@
   8. mysql-workbench （MySQL GUI 客户端工具）;
   9. sublime （纯文本编辑，需要解决中文输入的问题）;
   10. leafpad （简单文本编辑器，支持 GBK 编码）;
-  11. libreoffice （办公套件）;
+  11. wps （办公套件）;
   12. chrome;
   13. uget （GUI 下载工具）;
   14. deepin-qq （Deepin 团队的 Wine QQ 解决方案，还比较稳定）;
@@ -104,3 +74,8 @@
   19. wireshark;
   20. intellij idea;
   21. remarkable （Markdown）;
+  22. bleachbit;
+  23. brasero;
+  24. xmind
+  25. shutter
+  26. 
