@@ -43,6 +43,14 @@
   sudo apt-get install numix-icon-theme numix-icon-theme-circle
 ```
 
+# Synapse
+
+```shell
+sudo add-apt-repository ppa:synapse-core/ppa
+sudo apt-get update
+sudo apt-get install synapse
+```
+
 # Site List
 
   1. http://itsfoss.com/
