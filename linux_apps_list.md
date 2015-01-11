@@ -46,8 +46,9 @@
 # Synapse
 
 ```shell
-sudo add-apt-repository ppa:synapse-core/ppa
+sudo add-apt-repository ppa:noobslab/apps
 sudo apt-get update
+sudo apt-get install indicator-synapse
 sudo apt-get install synapse
 ```
 
