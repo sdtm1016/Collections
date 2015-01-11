@@ -76,6 +76,6 @@
   21. remarkable （Markdown）;
   22. bleachbit;
   23. brasero;
-  24. xmind
-  25. shutter
-  26. 
+  24. xmind;
+  25. shutter;
+  26. synase;
