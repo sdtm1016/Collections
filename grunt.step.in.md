@@ -47,3 +47,9 @@ module.exports = function(grunt) {
 
 };
 ```
+
+## 4. run
+
+```shell
+  grunt
+```
