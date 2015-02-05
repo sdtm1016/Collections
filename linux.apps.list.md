@@ -35,14 +35,6 @@
   # 软后使用 synaptic 安装壁纸集、图标集
 ```
 
-# Numix Icons Pack
-
-```shell 
-  sudo add-apt-repository ppa:numix/ppa
-  sudo apt-get update
-  sudo apt-get install numix-icon-theme numix-icon-theme-circle
-```
-
 # Synapse
 
 ```shell
@@ -88,3 +80,4 @@ sudo apt-get install synapse
   24. xmind;
   25. shutter;
   26. synase;
+  27. staruml
