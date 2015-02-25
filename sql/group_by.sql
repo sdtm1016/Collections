@@ -1,5 +1,6 @@
--- insert data
+-- oracle pl/sql
 
+-- insert data
 declare
   j number := 1;
 begin
@@ -16,5 +17,4 @@ begin
 end;
 
 -- count query
-
 select key, count(1) COUNT_KEY from TEST_GROUP_BY group by key;
