@@ -80,4 +80,6 @@ sudo apt-get install synapse
   24. xmind;
   25. shutter;
   26. synase;
-  27. staruml
+  27. staruml;
+  28. rz（上传文件）;
+  29. sz（下载文件）;
