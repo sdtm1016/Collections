@@ -11,7 +11,7 @@
         onrendered: function(canvas) {
             console.log(canvas)
             var context = canvas.toDataURL();;
-           console.log(context);
+            console.log(context);
             window.open(context);
         }
     });
