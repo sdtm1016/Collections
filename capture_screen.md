@@ -9,7 +9,6 @@
 ```javascript
     html2canvas(document.body, {
         onrendered: function(canvas) {
-            console.log;
             var context = canvas.toDataURL();
             console.log(context);
             window.open(context);
